@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: false
+  vars:
+    REVERSE_PROXIES:
+      - "RP_EASYWEB"
+      - "RP_EASYAPP"
+  roles:
+    - role: my_role
+      when: "'RP_EASYWEB' in REVERSE_PROXIES"
